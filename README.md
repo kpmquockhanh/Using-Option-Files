@@ -1,6 +1,6 @@
 [Source](https://dev.mysql.com/doc/refman/5.7/en/option-files.html "Permalink to MySQL :: MySQL 5.7 Reference Manual :: 4.2.6 Using Option Files")
 
-# MySQL ::Tài liêu jtham khảo MySQL 5.7 :: 4.2.6 Sử dụng file tùy chọn
+# MySQL ::Tài liệu tham khảo MySQL 5.7 :: 4.2.6 Sử dụng file tùy chọn
 
 ### 4.2.6 Sử dụng file tùy chọn
 
@@ -12,13 +12,13 @@ Chú thích
 
 Một chương trình MySQL bắt đầu với tùy chọn `\--no-defaults` chỉ đọc tùy chọn trong `.mylogin.cnf`. 
 
-Nhiều file tùy chọn là các file văn bản thuần, được tạo bằng bất kỳ trình soạn thảo văn bản nào. Ngoại lệ là file `.mylogin.cnf` có chứa các tùy chọn đường dẫn đăng nhập. Đây là file được mã hóa bởi tiện ích [**mysql_config_editor**][4]. Xem [Section 4.6.6, "**mysql_config_editor** — Tiện ích cấu hình MySQL"][4]. Một "đường dẫn đăng nhập" là nhóm tùy chọn chỉ cho phép một số tùy chọn nhất định: `host`, `user`, `password`, `port` và `socket`. Các chương trình khách chỉ định đường dẫn đăng nhập để đọc từ `.mylogin.cnf` sử dụng tùy chọn [`\--login-path`][5]. 
+Nhiều file tùy chọn là các file văn bản thuần, được tạo bằng bất kỳ trình soạn thảo văn bản nào. Ngoại lệ là file `.mylogin.cnf` có chứa các tùy chọn đường dẫn đăng nhập. Đây là file được mã hóa bởi tiện ích [**mysql_config_editor**][4]. Xem [Section 4.6.6, "**mysql_config_editor** — Tiện ích cấu hình MySQL"][4]. Một "đường dẫn đăng nhập" là nhóm tùy chọn chỉ cho phép một số tùy chọn nhất định: `host`, `user`, `password`, `port` và `socket`. Chương trình khách sử dụng tùy chọn [`\--login-path`][5] để xác định xem sẽ đọc đường dẫn đăng nhập nào từ `.mylogin.cnf`.
 
-Để chỉ định tên file đường dẫn đăng nhập thay thế, hãy đặt biến môi trường `MYSQL_TEST_LOGIN_FILE`. Biến này được sử dụng bởi tiện ích thử nghiệm **mysql-test-run.pl**, nhưng cũng được công nhận bởi [**mysql_config_editor**][4] và bởi MySQL khách như là [**mysql**][6], [**mysqladmin**][7], và hơn nữa. 
+Để chỉ định tên file đường dẫn đăng nhập thay thế, hãy đặt biến môi trường `MYSQL_TEST_LOGIN_FILE`. Biến này được sử dụng bởi tiện ích kiểm thử **mysql-test-run.pl**, nhưng cũng được nhận biết bởi [**mysql_config_editor**][4] và bởi MySQL khách như là [**mysql**][6], [**mysqladmin**][7], và hơn nữa. 
 
-MySQL tìm kiếm các file tùy chọn theo thứ tự được mô tả trong phần thảo luận dưới và đọc bất kỳ file nào tồn tại. Nếu một file tùy chọn bạn muốn sử dụng không tồn tại, hãy tạo nó bằng cách sử dụng phương thức thích hợp, như mới thảo luận. 
+MySQL tìm kiếm các file tùy chọn theo thứ tự được mô tả trong phần thảo luận dưới và đọc bất kỳ file nào tồn tại. Nếu một file tùy chọn bạn muốn sử dụng không tồn tại, hãy tạo nó bằng cách sử dụng phương thức thích hợp, như đã được đề cập như trên. 
 
-Trên Windows, Chương trình MySQL đọc các tùy chọn khởi động từ các file được hiển thị trong bảng sau, theo thứ tự được chỉ định (các file được liệt kê đầu tiên được đọc trước tiên, các file được đọc sau được ưu tiên).
+Trên Windows, Chương trình MySQL đọc các tùy chọn khởi động từ các file được hiển thị trong bảng sau, theo thứ tự được chỉ định (các file được liệt kê đầu tiên được đọc trước tiên, các file sau được đọc theo thứ tự ưu tiên).
 
 **Table 4.1 File tùy chọn Đọc trên các hệ thống Windows**
 
@@ -45,7 +45,7 @@ Trong bảng trên, `% PROGRAMDATA%` đại diện cho thư mục hệ thống f
 
 _`BASEDIR`_ đại diện cho thư mục cài đặt cơ sở MySQL. Khi MySQL 5.7 đã được cài đặt bằng cách sử dụng MySQL Installer, đây thường là `C: _`PROGRAMDIR`_MySQLMySQL 5.7 Server` trong đó _`PROGRAMDIR`_ đại diện cho thư mục chương trình (thường là` Program Files` trên các phiên bản tiếng Anh của Windows), [Phần 2.3.3, "Trình cài đặt MySQL cho Windows"] [9]. 
 
-Trên các hệ thống giống Unix và Unix, các chương trình MySQL đọc các tùy chọn khởi động từ các file được hiển thị trong bảng sau, theo thứ tự được chỉ định (các file được liệt kê đầu tiên được đọc trước tiên, các file đọc sau được ưu tiên). 
+Trên các hệ thống giống Unix và Unix, các chương trình MySQL đọc các tùy chọn khởi động từ các file được hiển thị trong bảng sau, theo thứ tự được chỉ định (các file được liệt kê đầu tiên được đọc trước tiên, các file sau được đọc theo thứ tự ưu tiên). 
 
 Chú thích 
 
@@ -73,7 +73,7 @@ _`DATADIR`_ thường là `/ usr / local / mysql / data`, mặc dù điều này
 
 Nếu tìm thấy nhiều cá thể của một tùy chọn nhất định, cá thể cuối cùng được ưu tiên, với một ngoại lệ: Đối với ** [mysqld **] [1], cá thể _first_ của tùy chọn `[\ - user`] [13] là được sử dụng như một biện pháp phòng ngừa an ninh, để ngăn người dùng được chỉ định trong một file tùy chọn bị ghi đè trên dòng lệnh. 
 
-Mô tả sau đây về cú pháp file tùy chọn áp dụng cho các file bạn chỉnh sửa theo cách thủ công. Điều này loại trừ `.mylogin.cnf`, được tạo ra bằng cách sử dụng ** [mysql_config_editor **] [4] và được mã hóa. 
+Mô tả sau đây về cú pháp file tùy chọn áp dụng cho các file bạn chỉnh sửa theo cách thủ công. Điều này không áp dụng với `.mylogin.cnf`, được tạo ra bằng cách sử dụng ** [mysql_config_editor **] [4] và được mã hóa. 
 
 Bất kỳ tùy chọn dài có thể được đưa ra trên dòng lệnh khi chạy một chương trình MySQL tốt hơn là đưa ra trong một tập tin tùy chọn. Để có được danh sách các tùy chọn có sẵn cho một chương trình, hãy chạy nó với tùy chọn `\ - help`. (Đối với ** [mysqld **] [1], sử dụng `[\ - verbose`] [2] và` [\ - help`] [3].)
 
