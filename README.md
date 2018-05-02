@@ -49,7 +49,7 @@ Trên các hệ thống giống Unix và Unix, các chương trình MySQL đọc
 
 Chú thích 
 
-Trên các nền tảng Unix, MySQL bỏ qua các file cấu hình có thể ghi trên thế giới. Đây là cố ý như một biện pháp an ninh. 
+Trên các nền tảng Unix, MySQL bỏ qua các file cấu hình có thể ghi ~~trên thế giới~~ **toàn cục**. Đây là cố ý như một biện pháp an ninh. 
 
 **Bảng 4.2 Các tệp tùy chọn được đọc trên các hệ thống giống Unix và Unix**
 
@@ -63,7 +63,7 @@ Trên các nền tảng Unix, MySQL bỏ qua các file cấu hình có thể ghi
 | `~/.my.cnf`             | User-specific options                                         |  
 | `~/.mylogin.cnf`        | User-specific login path options (clients only)               |  
 
-Trong bảng trước, `~` đại diện cho thư mục chính của người dùng hiện tại (giá trị của `$ HOME`). 
+Trong bảng ~~trước~~ **trên**, `~` đại diện cho thư mục chính của người dùng hiện tại (giá trị của `$ HOME`). 
 
 _`SYSCONFDIR`_ đại diện cho thư mục được chỉ định với tùy chọn [`SYSCONFDIR`] [10] để ** CMake ** khi MySQL được xây dựng. Theo mặc định, đây là thư mục `etc` nằm trong thư mục cài đặt đã biên dịch. 
 
@@ -122,7 +122,7 @@ Nhóm tùy chọn `[client]` được đọc bởi tất cả các chương trì
 
 Nhóm `[client]` cho phép bạn chỉ định các tùy chọn áp dụng cho tất cả các máy khách. Ví dụ, `[client]` là nhóm thích hợp để sử dụng để chỉ định mật khẩu để kết nối với máy chủ. (Nhưng hãy chắc chắn rằng tập tin tùy chọn chỉ có thể truy cập được bởi chính bạn, để người khác không thể tìm ra mật khẩu của bạn.) Đảm bảo không đặt tùy chọn trong nhóm `[client]` trừ khi nó được các chương trình khách _all_ nhận ra mà bạn sử dụng . Các chương trình không hiểu tùy chọn thoát sau khi hiển thị thông báo lỗi nếu bạn cố gắng chạy chúng. 
 
-Liệt kê các nhóm tùy chọn chung hơn trước tiên và các nhóm cụ thể hơn sau này. Ví dụ, một nhóm `[client]` là tổng quát hơn vì nó được đọc bởi tất cả các chương trình máy khách, trong khi nhóm `[mysqldump]` chỉ được đọc bởi ** [mysqldump **] [17]. Tùy chọn được chỉ định sau này ghi đè các tùy chọn được chỉ định trước đó, do đó, đặt các nhóm tùy chọn theo thứ tự `[client]`, `[mysqldump]` cho phép ** [mysqldump **] [17] -specific options để ghi đè các tùy chọn `[client]`. 
+Liệt kê các nhóm tùy chọn chung hơn trước tiên và các nhóm cụ thể hơn sau ~~này~~ **ở sau**. Ví dụ, một nhóm `[client]` là tổng quát hơn vì nó được đọc bởi tất cả các chương trình máy khách, trong khi nhóm `[mysqldump]` chỉ được đọc bởi ** [mysqldump **] [17]. Tùy chọn được chỉ định sau này ghi đè các tùy chọn được chỉ định trước đó, do đó, đặt các nhóm tùy chọn theo thứ tự `[client]`, `[mysqldump]` cho phép ** [mysqldump **] [17] -specific options để ghi đè các tùy chọn `[client]`. 
 
 Đây là một file tùy chọn toàn cục điển hình: 
     
@@ -157,7 +157,7 @@ Liệt kê các nhóm tùy chọn chung hơn trước tiên và các nhóm cụ 
     [mysqld-5.7]
     sql_mode=TRADITIONAL
 
-Có thể sử dụng các chỉ thị `! Include` trong các tfileệp tùy chọn để bao gồm các file tùy chọn khác và`! Includeir` để tìm kiếm các thư mục cụ thể cho các file tùy chọn. Ví dụ: để bao gồm file `/ home / mydir / myopt.cnf`, hãy sử dụng chỉ thị sau: 
+Có thể sử dụng các chỉ thị `! Include` trong các tệp tùy chọn để bao gồm các file tùy chọn khác và`! Includeir` để tìm kiếm các thư mục cụ thể cho các file tùy chọn. Ví dụ: để bao gồm file `/ home / mydir / myopt.cnf`, hãy sử dụng chỉ thị sau: 
     
     
     !include /home/mydir/myopt.cnf
